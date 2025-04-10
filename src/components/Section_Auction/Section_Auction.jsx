@@ -58,7 +58,7 @@ const Section_Auction = () => {
           <Spinner />
         ) : (
           showSection && (
-            <div className="flex justify-between items-start gap-2">
+            <div className="flex justify-between items-start gap-2 2xl:gap-6">
               <Items
                 items={items}
                 onFavoriteClick={handleFavoriteClick}

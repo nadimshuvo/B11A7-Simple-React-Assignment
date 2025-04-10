@@ -13,7 +13,7 @@ const Favorite_Items = ({item,onFavoriteDeleteIconClick, isLastItem}) => {
     <section className="px-6 transition hover:bg-red-50">
       <div className={`flex justify-between gap-6 py-6 ${ isLastItem ? '' : 'border-b border-[#DCE5F3]'}`}>
         <img
-          className="w-24 h-24 object-cover rounded-2xl"
+          className="w-24 h-24 min-w-24 object-cover rounded-2xl"
           src={image}
           alt={description}
         />
