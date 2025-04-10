@@ -12,7 +12,7 @@ function App() {
       <Banner />
       <Section_Auction />
       <ToastContainer />
-      <Footer />
+      
     </>
   );
 }
