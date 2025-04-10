@@ -12,9 +12,9 @@ const Item = ({ item, isFavorited, onFavoriteClick }) => {
 
   return (
     <tr className="sora-regular text-[18px] leading-6 text-[#0E2954] transition hover:bg-amber-50 border-b border-[#DCE5F3]">
-      <td className="py-8 px-8 flex gap-6 max-w-[464px]">
-        <img className="w-24 h-24 object-cover rounded-2xl" src={image} />
-        <h5 className="mt-3.5 sora-regular text-[18px] leading-6 text-[#0E2954]">
+      <td className="py-8 px-8 flex gap-6 max-w-[464px]">        
+          <img className="w-24 h-24 min-w-24 object-cover rounded-2xl" src={image} />        
+        <h5 className="mt-3.5 sora-regular text-[18px] leading-6 text-[#0E2954] max-w-[344px]">
           {title}
         </h5>
       </td>
