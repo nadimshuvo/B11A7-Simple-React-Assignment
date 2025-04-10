@@ -11,8 +11,7 @@ function App() {
       <Navbar />
       <Banner />
       <Section_Auction />
-      <ToastContainer />
-      
+      <Footer />
     </>
   );
 }
