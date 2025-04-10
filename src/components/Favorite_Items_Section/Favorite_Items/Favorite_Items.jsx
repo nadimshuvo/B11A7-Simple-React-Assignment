@@ -1,23 +1,32 @@
 import React from "react";
 
-const Favorite_Items = () => {
+const Favorite_Items = ({item,onFavoriteDeleteIconClick, isLastItem}) => {
+  console.log(isLastItem);
+  
+  const {image,title,description,currentBidPrice,bidsCount} = item;
+
+  const handleFavoriteItems = ()=> {
+    onFavoriteDeleteIconClick(item);
+  }
+  
   return (
-    <section className="px-6">
-      <div className="flex gap-6 py-6 border-b border-[#DCE5F3]">
+    <section className="px-6 transition hover:bg-red-50">
+      <div className={`flex justify-between gap-6 py-6 ${ isLastItem ? '' : 'border-b border-[#DCE5F3]'}`}>
         <img
-          className="w-24 h-24"
-          src="https://i.ibb.co.com/B23bQgkG/Bid2-min.png"
-          alt=""
+          className="w-24 h-24 object-cover rounded-2xl"
+          src={image}
+          alt={description}
         />
         <div className="sora-regular text-[16px] leading-5 text-[#0E2954]">
-          <p>1965 Gibson SG Standard Electric Guitar</p>
+          <p>{title}</p>
           <aside className="flex gap-6 mt-3.5">
-            <p>$2,650</p>
-            <p>Bids: 12</p>
+            <p>${currentBidPrice}</p>
+            <p>Bids: {bidsCount}</p>
           </aside>
         </div>
-        <div className="border">
+        <div className="ml-auto cursor-pointer " onClick={handleFavoriteItems}>
           <svg
+          className="transition rounded-full hover:bg-red-300 hover:rounded-full"
             width="24"
             height="24"
             viewBox="0 0 24 24"
