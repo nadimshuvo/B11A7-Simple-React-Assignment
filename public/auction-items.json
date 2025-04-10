@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Leica M3 Camera",
+      "description": "The Leica M3 is a legendary vintage 35mm film camera revered for its timeless design, exceptional craftsmanship, and unmatched reliability. Introduced in 1954, it was the first model in Leica's iconic M-series rangefinder cameras and became a benchmark in photographic history.",
+      "currentBidPrice": 2850,
+      "timeLeft": 2,
+      "bidsCount": 15,
+      "image": "https://i.ibb.co.com/DPCZ3GwY/Bid1-min.png"
+    },
+    {
+      "id": 2,
+      "title": "1965 Gibson SG Standard Electric Guitar",
+      "description": "The 1965 Gibson SG Standard Electric Guitar stands as a testament to Gibson’s legendary craftsmanship during the golden era of rock. Crafted in 1965, this instrument combines an innovative design with functional aesthetics, making it one of the most sought-after guitars by collectors and musicians alike.",
+      "currentBidPrice": 1850,
+      "timeLeft": 3,
+      "bidsCount": 8,
+      "image": "https://i.ibb.co.com/B23bQgkG/Bid2-min.png"
+    },
+    {
+      "id": 3,
+      "title": "Original Apple Macintosh 128K (1984)",
+      "description": "The Apple Macintosh 128K, introduced in January 1984, was a groundbreaking personal computer that revolutionized the industry with its innovative design and user-friendly features. As Apple’s first successful mass-market computer, the Macintosh 128K holds a legendary place in tech history.",
+      "currentBidPrice": 3850,
+      "timeLeft": 4,
+      "bidsCount": 2,
+      "image": "https://i.ibb.co.com/V0fC8tbf/Bid3-min.png"
+    },
+    {
+      "id": 4,
+      "title": "Rolex Submariner 16610",
+      "description": "The Rolex Submariner 16610 is an iconic dive watch that has earned its place as a timeless classic in the world of luxury timepieces. Produced between 1988 and 2010, this model is celebrated for its durability, precision, and elegant design.",
+      "currentBidPrice": 5850,
+      "timeLeft": 5,
+      "bidsCount": 7,
+      "image": "https://i.ibb.co.com/qMHNQW70/Bid4-min.png"
+    },
+    {
+      "id": 5,
+      "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+      "description": "The First Edition of The Great Gatsby by F. Scott Fitzgerald is a highly sought-after collector's item, originally published in 1925 by Charles Scribner's Sons. This edition is celebrated for its historical significance and its role in defining the Jazz Age.",
+      "currentBidPrice": 6850,
+      "timeLeft": 6,
+      "bidsCount": 5,
+      "image": "https://i.ibb.co.com/W4kQ15V5/Bid6-min.png"
+    },
+    {
+      "id": 6,
+      "title": "Mid-Century Modern Eames Lounge Chair",
+      "description": "The Eames Lounge Chair, designed by Charles and Ray Eames in 1956, is a quintessential piece of mid-century modern furniture that combines luxury, comfort, and timeless design. It remains one of the most iconic and sought-after chairs in the world of interior design.",
+      "currentBidPrice": 9850,
+      "timeLeft": 7,
+      "bidsCount": 3,
+      "image": "https://i.ibb.co.com/Rk97ZW45/Bid5-min.png"
+    }
+  ]
