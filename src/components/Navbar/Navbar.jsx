@@ -1,9 +1,44 @@
 import React from "react";
 import badge from "../../assets/AuctionGallery.svg";
-import avatar from "../../assets/avatar.png";
-import notificationIcon from "../../assets/notifications.svg";
+
+import { GoogleAuthProvider, signInWithPopup,signOut,onAuthStateChanged  } from "firebase/auth";
+import { auth } from "../../firebase/firebase.init";
+import { useState } from "react";
+import { useEffect } from "react";
+
+const providerGoogle = new GoogleAuthProvider();
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleGoogleProvider = async () => {
+    try {
+      await signInWithPopup(auth, providerGoogle);
+      // Don't need to manually setUser here anymore
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
+  
+
+  console.log(user);
+
   return (
     <section className="bg-[#EBF0F5]">
       <div className="container mx-auto py-0.5">
@@ -32,58 +67,46 @@ const Navbar = () => {
           {/* Right Section Notifications and Avater */}
           <div className="navbar-end">
             <div className="flex-none">
-              <div className="dropdown dropdown-end mr-4">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle hover:border-blue-500"
-                >
-                  <div className="indicator">
-                    <img src={notificationIcon}/>
-                  </div>
-                </div>
-                <div
-                  tabIndex={0}
-                  className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
-                >
-                  <div className="card-body">
-                    <span className="text-lg font-bold">8 Items</span>
-                    <span className="text-info">Subtotal: $999</span>
-                    <div className="card-actions">
-                      <button className="btn btn-primary btn-block">
-                        View cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
               <div className="dropdown dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
-                  <div className="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component" src={avatar} />
-                  </div>
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-                >
-                  <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                  <li>
-                    <a>Logout</a>
-                  </li>
-                </ul>
+                {user ? (
+                  <>
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className="btn btn-ghost btn-circle avatar"
+                    >
+                      {user.photoURL && (
+                        <img
+                          className="border border-black rounded-full"
+                          alt="user"
+                          src={user.photoURL}
+                        />
+                      )}
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                    >
+                      <li>
+                        <a className="justify-between">{user?.displayName}</a>
+                      </li>
+                      <li>
+                        <a>Email: {user?.email}</a>
+                      </li>
+                      <li onClick={handleLogout}>
+                        <a>Logout</a>
+                      </li>
+                    </ul>
+                  </>
+                ) : (
+                  <button
+                    onClick={handleGoogleProvider}
+                    className="btn btn-dash bg-amber-200 hover:bg-blue-200 text-xl text-black mr-2"
+                  >
+                    Sign In
+                  </button>
+                )}
               </div>
             </div>
           </div>
