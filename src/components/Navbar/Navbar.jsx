@@ -19,7 +19,6 @@ const Navbar = () => {
         setUser(null);
       }
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -37,6 +36,8 @@ const Navbar = () => {
   };
   
 
+  console.log(user);
+  console.log(user);
   console.log(user);
 
   return (
